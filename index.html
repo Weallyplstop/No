@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>No Fear Learners Driving School – Patient Driving Instructor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="No Fear Learners Driving School – patient, professional driving instructor specialising in nervous learners and first-time drivers." />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-light: #dbeafe;
+      --primary-dark: #1d4ed8;
+      --accent: #22c55e;
+      --bg: #0f172a;
+      --text-main: #0f172a;
+      --text-muted: #6b7280;
+      --card-bg: #ffffff;
+      --border-soft: #e5e7eb;
+      --radius-lg: 1.25rem;
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text-main);
+      background: #f3f4f6;
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Layout */
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: rgba(15, 23, 42, 0.92);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+    }
+
+    .nav {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0.8rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      color: #e5e7eb;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .logo-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #60a5fa, #1d4ed8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: white;
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.6);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 0.25rem;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      transition: width 0.2s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+    }
+
+    .nav-phone {
+      display: none;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 0.55rem 1.1rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      box-shadow: 0 12px 24px rgba(37, 99, 235, 0.45);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px) scale(1.01);
+      box-shadow: 0 18px 35px rgba(37, 99, 235, 0.55);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: transparent;
+      color: #e5e7eb;
+    }
+
+    .btn-outline:hover {
+      background: rgba(15, 23, 42, 0.7);
+      transform: translateY(-1px);
+    }
+
+    main {
+      flex: 1;
+    }
+
+    section {
+      padding: 4rem 1.25rem;
+    }
+
+    .section-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    /* Hero */
+    .hero {
+      background: radial-gradient(circle at top left, #1d4ed8 0, #0f172a 52%, #020617 100%);
+      color: white;
+      padding-top: 4rem;
+      padding-bottom: 4.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.5);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1.1rem;
+    }
+
+    .eyebrow-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.3);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.1rem, 4vw, 2.9rem);
+      line-height: 1.1;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero h1 span {
+      color: #bfdbfe;
+    }
+
+    .hero-subtitle {
+      font-size: 0.98rem;
+      max-width: 520px;
+      color: #e5e7eb;
+      margin-bottom: 1.7rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.7);
+      font-size: 0.78rem;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.1rem;
+      font-size: 0.78rem;
+      color: #cbd5f5;
+    }
+
+    .hero-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .hero-meta-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #38bdf8;
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top right, #1d4ed8, #020617);
+      border-radius: 1.6rem;
+      padding: 1.7rem 1.6rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      font-size: 0.85rem;
+    }
+
+    .hero-stat {
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.85rem;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      min-width: 110px;
+    }
+
+    .hero-stat-label {
+      font-size: 0.75rem;
+      color: #cbd5f5;
+      margin-bottom: 0.1rem;
+    }
+
+    .hero-stat-value {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .hero-availability {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+      padding: 0.9rem 0.9rem;
+      border-radius: 1rem;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px dashed rgba(148, 163, 184, 0.7);
+      font-size: 0.85rem;
+      color: #e5e7eb;
+    }
+
+    .hero-availability span.highlight {
+      color: #bbf7d0;
+      font-weight: 500;
+    }
+
+    .hero-photo {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+
+    .hero-avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #38bdf8, #4f46e5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: white;
+      box-shadow: 0 10px 25px rgba(59, 130, 246, 0.7);
+    }
+
+    .hero-avatar-text {
+      font-size: 0.9rem;
+    }
+
+    .hero-avatar-text div:first-child {
+      font-weight: 600;
+    }
+
+    .hero-avatar-text div:last-child {
+      font-size: 0.8rem;
+      color: #cbd5f5;
+    }
+
+    /* Generic section styles */
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin-bottom: 2.2rem;
+      align-items: flex-end;
+    }
+
+    .section-title-group {
+      max-width: 520px;
+    }
+
+    .section-eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title {
+      font-size: 1.85rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .section-aside {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      max-width: 320px;
+    }
+
+    /* Services / Lessons */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.4rem 1.4rem 1.3rem;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.09);
+      border: 1px solid var(--border-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    .card-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .card-title {
+      font-weight: 600;
+    }
+
+    .card-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      flex: 1;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      margin-top: 0.4rem;
+    }
+
+    .price {
+      font-weight: 600;
+    }
+
+    .pill {
+      font-size: 0.75rem;
+      padding: 0.18rem 0.6rem;
+      border-radius: 999px;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+    }
+
+    /* About */
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 2.4rem;
+      align-items: start;
+    }
+
+    .about-highlights {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.9rem;
+    }
+
+    .about-highlight {
+      background: white;
+      border-radius: 1rem;
+      padding: 0.9rem 1rem;
+      border: 1px dashed rgba(148, 163, 184, 0.7);
+      font-size: 0.82rem;
+    }
+
+    .about-highlight strong {
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    /* Testimonials */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .testimonial {
+      background: white;
+      border-radius: 1.25rem;
+      padding: 1.2rem 1.3rem;
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+      font-size: 0.88rem;
+    }
+
+    .testimonial-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.6rem;
+    }
+
+    .testimonial-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .stars {
+      font-size: 0.85rem;
+      color: #facc15;
+    }
+
+    .testimonial-meta {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 0.4rem;
+    }
+
+    /* Pricing strip */
+    .pricing-strip {
+      margin-top: 2.4rem;
+      padding: 1.1rem 1.3rem;
+      border-radius: 1.25rem;
+      background: linear-gradient(120deg, #eff6ff, #ecfdf5);
+      border: 1px solid #d1fae5;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.2rem;
+      font-size: 0.9rem;
+    }
+
+    .pricing-strip strong {
+      font-size: 1rem;
+    }
+
+    /* Contact / CTA */
+    .contact-section {
+      padding-bottom: 4.5rem;
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 2rem;
+      align-items: start;
+    }
+
+    form {
+      background: white;
+      padding: 1.5rem 1.5rem 1.4rem;
+      border-radius: 1.5rem;
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 18px 36px rgba(15, 23, 42, 0.09);
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    label {
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+      display: inline-block;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    input,
+    select,
+    textarea {
+      border-radius: 0.85rem;
+      border: 1px solid #d1d5db;
+      padding: 0.6rem 0.7rem;
+      font-family: inherit;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+      background: #f9fafb;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.35);
+      background: white;
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+
+    .form-footnote {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .contact-info-card {
+      background: #020617;
+      color: #e5e7eb;
+      border-radius: 1.5rem;
+      padding: 1.7rem 1.5rem;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.6);
+      display: grid;
+      gap: 1.1rem;
+      font-size: 0.9rem;
+    }
+
+    .contact-line {
+      display: flex;
+      justify-content: space-between;
+      gap: 1.2rem;
+      border-bottom: 1px dashed rgba(148, 163, 184, 0.4);
+      padding-bottom: 0.6rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .contact-label {
+      color: #9ca3af;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .contact-value a {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    .contact-taglist {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      font-size: 0.76rem;
+    }
+
+    .tag {
+      border-radius: 999px;
+      padding: 0.2rem 0.7rem;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    .availability-note {
+      font-size: 0.82rem;
+      color: #d1d5db;
+    }
+
+    footer {
+      border-top: 1px solid #e5e7eb;
+      padding: 1.1rem 1.25rem 1.6rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      background: white;
+    }
+
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.9rem;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    /* Responsive */
+    .nav-toggle {
+      display: none;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .split,
+      .contact-layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero {
+        padding-top: 3rem;
+      }
+
+      .hero-card {
+        order: -1;
+      }
+
+      .section-heading {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .cards-grid,
+      .testimonials-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-phone {
+        display: inline-flex;
+      }
+
+      .nav-toggle {
+        display: inline-flex;
+        border-radius: 999px;
+        width: 34px;
+        height: 34px;
+        border: 1px solid rgba(148, 163, 184, 0.6);
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 1.1rem;
+      }
+
+      .nav-menu-open .nav-links {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 56px;
+        background: rgba(15, 23, 42, 0.98);
+        padding: 0.7rem 1.25rem 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+        border-bottom: 1px solid rgba(148, 163, 184, 0.4);
+      }
+    }
+
+    @media (max-width: 640px) {
+      section {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+      }
+
+      .cards-grid,
+      .testimonials-grid,
+      .about-highlights {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-card {
+        padding: 1.4rem 1.3rem;
+      }
+
+      .pricing-strip {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .form-row {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero-actions .btn {
+        justify-content: center;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div class="nav" id="navbar">
+      <a href="#top" class="logo">
+        <div class="logo-mark">N</div>
+        <span>No Fear Learners</span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#lessons">Lessons</a>
+        <a href="#about">About</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-cta">
+        <a href="tel:+440000000000" class="nav-phone">Call: 0000 000 000</a>
+        <button class="btn btn-outline nav-phone" onclick="scrollToSection('contact')">Book Lesson</button>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="section-inner hero-grid">
+        <div>
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            No Fear Learners Driving School
+          </div>
+          <h1>
+            Learn to drive with confidence.<br />
+            <span>No panic, no pressure, just progress.</span>
+          </h1>
+          <p class="hero-subtitle">
+            At <strong>No Fear Learners Driving School</strong>, nervous learners are our specialty.
+            Calm, patient lessons at around <strong>£35 per hour</strong>, designed to build your confidence
+            step by step – from first drive to test day.
+          </p>
+          <div class="hero-badges">
+            <span class="hero-badge">✅ Nervous learners welcome</span>
+            <span class="hero-badge">🚘 Manual lessons – 1 to 1 only</span>
+            <span class="hero-badge">📍 Covering YourTown &amp; nearby areas</span>
+          </div>
+          <div class="hero-actions">
+            <button class="btn btn-primary" onclick="scrollToSection('contact')">
+              Book your first lesson
+              <span>→</span>
+            </button>
+            <button class="btn btn-outline" onclick="scrollToSection('lessons')">
+              View lesson options
+            </button>
+          </div>
+          <div class="hero-meta">
+            <div class="hero-meta-item">
+              <span class="hero-meta-dot"></span>
+              <span>Specialist in anxious &amp; first-time drivers</span>
+            </div>
+            <div class="hero-meta-item">
+              <span class="hero-meta-dot"></span>
+              <span>Evening &amp; weekend slots available</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <div class="hero-photo">
+            <div class="hero-avatar">N</div>
+            <div class="hero-avatar-text">
+              <div>Your Instructor</div>
+              <div>DVSA-Approved Driving Instructor</div>
+            </div>
+          </div>
+
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <div class="hero-stat-label">Hourly rate</div>
+              <div class="hero-stat-value">£35</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-label">Learners passed</div>
+              <div class="hero-stat-value">150+</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-label">Focus</div>
+              <div class="hero-stat-value">No fear driving</div>
+            </div>
+          </div>
+
+          <div class="hero-availability">
+            <div>
+              Next available lesson:
+              <span class="highlight">within 7–10 days</span><br />
+              <span style="font-size: 0.78rem; opacity: 0.85;">(subject to area &amp; time)</span>
+            </div>
+            <button class="btn btn-primary" style="padding-inline: 0.9rem;" onclick="scrollToSection('contact')">
+              Check availability
+            </button>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- LESSONS / SERVICES -->
+    <section id="lessons">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div class="section-title-group">
+            <div class="section-eyebrow">Lessons &amp; pricing</div>
+            <h2 class="section-title">Calm, structured driving lessons from £35/hour.</h2>
+            <p class="section-subtitle">
+              Whether you’re terrified of the driver’s seat or just a bit nervous,
+              we’ll build a lesson plan around you with clear goals and no shouting – ever.
+            </p>
+          </div>
+          <div class="section-aside">
+            Standard rate is around <strong>£35 per hour</strong>, with discounts available
+            for block bookings. Nervous learners and test retakes always welcome.
+          </div>
+        </div>
+
+        <div class="cards-grid">
+          <article class="card">
+            <div class="card-icon">🚦</div>
+            <h3 class="card-title">Beginner lessons</h3>
+            <p class="card-text">
+              Perfect if you’ve never driven before or feel very anxious.
+              We’ll start in quiet areas, go at your pace and build up only when you’re ready.
+            </p>
+            <div class="card-footer">
+              <span class="price">From £35 / hour</span>
+              <span class="pill">No experience needed</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">📘</div>
+            <h3 class="card-title">Test preparation</h3>
+            <p class="card-text">
+              Close to your test or retaking it? We’ll focus on likely routes, manoeuvres,
+              and the areas you’re most worried about, with relaxed mock tests.
+            </p>
+            <div class="card-footer">
+              <span class="price">From £35 / hour</span>
+              <span class="pill">Mock tests included</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🔁</div>
+            <h3 class="card-title">Refresher lessons</h3>
+            <p class="card-text">
+              Haven’t driven in a while or lost confidence after a bad experience?
+              Gentle refresher sessions to help you feel safe on the road again.
+            </p>
+            <div class="card-footer">
+              <span class="price">From £35 / hour</span>
+              <span class="pill">Confidence rebuilding</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="pricing-strip">
+          <div>
+            <strong>Save with block bookings.</strong><br />
+            Book a block of hours at No Fear Learners and get a discounted rate – ideal if you’re committed
+            to regular lessons and want to plan ahead.
+          </div>
+          <button class="btn btn-primary" onclick="scrollToSection('contact')">
+            Ask about block discounts
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" style="background: white;">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div class="section-title-group">
+            <div class="section-eyebrow">About No Fear Learners</div>
+            <h2 class="section-title">Driving lessons designed for nervous learners.</h2>
+            <p class="section-subtitle">
+              No Fear Learners Driving School exists for one main reason: to help anxious and first-time drivers
+              feel calm, safe and in control on the road.
+            </p>
+          </div>
+        </div>
+
+        <div class="split">
+          <div>
+            <p style="font-size: 0.95rem; margin-bottom: 0.9rem;">
+              At <strong>No Fear Learners Driving School</strong>, you’ll never be rushed, shouted at or made to feel
+              silly for asking questions. Lessons are calm, clear and at your pace, with plenty of reassurance
+              and explanation.
+            </p>
+            <p style="font-size: 0.95rem; margin-bottom: 0.9rem;">
+              All lessons are strictly <strong>1-to-1</strong> in a modern, dual-controlled car, with door-to-door pick-up
+              from home, college or work. Together, we set simple goals for each lesson so you always know
+              what you’re working on and why.
+            </p>
+            <p style="font-size: 0.95rem;">
+              Whether you’re a complete beginner, have failed before, or are returning after a break,
+              you’re in the right place. No fear, no pressure – just steady, confident progress.
+            </p>
+          </div>
+
+          <div>
+            <div class="about-highlights">
+              <div class="about-highlight">
+                <strong>Patient &amp; friendly</strong>
+                Extra-patient teaching style, tailored for nervous and anxious learners who need time to build confidence.
+              </div>
+              <div class="about-highlight">
+                <strong>Local test knowledge</strong>
+                Regular lessons on YourTown test routes so you recognise key junctions, roundabouts and tricky spots.
+              </div>
+              <div class="about-highlight">
+                <strong>Modern dual-control car</strong>
+                Learn in a small, easy-to-handle car with dual controls, ideal for building confidence in busy areas.
+              </div>
+              <div class="about-highlight">
+                <strong>Clear, simple feedback</strong>
+                No confusing jargon – just straightforward guidance and small, manageable steps each lesson.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div class="section-title-group">
+            <div class="section-eyebrow">Reviews</div>
+            <h2 class="section-title">What nervous learners say after driving with us.</h2>
+            <p class="section-subtitle">
+              Real feedback from learners who started out scared or unsure – and finished with a pass certificate
+              and real confidence.
+            </p>
+          </div>
+          <div class="section-aside">
+            More reviews are available on Google and social media – links are shared after your first lesson.
+          </div>
+        </div>
+
+        <div class="testimonials-grid">
+          <article class="testimonial">
+            <div class="testimonial-header">
+              <div class="testimonial-name">Emily R</div>
+              <div class="stars">★★★★★</div>
+            </div>
+            <p>
+              I was terrified to drive after a bad experience, but No Fear Learners made everything feel calm and simple.
+              We started really slowly and built up. I passed first time!
+            </p>
+            <div class="testimonial-meta">Nervous beginner – passed in YourTown</div>
+          </article>
+
+          <article class="testimonial">
+            <div class="testimonial-header">
+              <div class="testimonial-name">Jay P</div>
+              <div class="stars">★★★★★</div>
+            </div>
+            <p>
+              I always panicked at roundabouts before. My instructor broke it down step by step and didn’t get annoyed
+              when I made mistakes. I’m now driving on my own confidently.
+            </p>
+            <div class="testimonial-meta">Anxious learner – confidence course</div>
+          </article>
+
+          <article class="testimonial">
+            <div class="testimonial-header">
+              <div class="testimonial-name">Hannah L</div>
+              <div class="stars">★★★★★</div>
+            </div>
+            <p>
+              After two failed tests I’d almost given up. No Fear Learners focused on what scared me most and helped me
+              stay calm on the day. Finally got my pass!
+            </p>
+            <div class="testimonial-meta">Test prep &amp; mock tests</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section" style="background: #f9fafb;">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div class="section-title-group">
+            <div class="section-eyebrow">Book a lesson</div>
+            <h2 class="section-title">Ready to start driving with no fear?</h2>
+            <p class="section-subtitle">
+              Fill in the form and No Fear Learners Driving School will get back to you as soon as possible
+              to talk about availability, pick-up location and the best plan for you.
+            </p>
+          </div>
+        </div>
+
+        <div class="contact-layout">
+          <form id="contactForm">
+            <div class="form-row">
+              <div class="field">
+                <label for="name">Name *</label>
+                <input type="text" id="name" name="name" required placeholder="Your full name" />
+              </div>
+              <div class="field">
+                <label for="phone">Mobile number *</label>
+                <input type="tel" id="phone" name="phone" required placeholder="07..." />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="email">Email (optional)</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" />
+              </div>
+              <div class="field">
+                <label for="area">Pickup area *</label>
+                <input type="text" id="area" name="area" required placeholder="e.g. YourTown centre, College, Workplace" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="experience">Driving experience *</label>
+                <select id="experience" name="experience" required>
+                  <option value="">Please select</option>
+                  <option value="beginner">Complete beginner</option>
+                  <option value="some-lessons">Had a few lessons</option>
+                  <option value="near-test">Close to test-ready</option>
+                  <option value="full-licence">Full licence – refresher</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="preferredTime">Preferred days / times</label>
+                <input type="text" id="preferredTime" name="preferredTime" placeholder="e.g. Weekday evenings, Saturday mornings" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="message">Anything else we should know?</label>
+              <textarea id="message" name="message" placeholder="Nervous? Test booked? Bad past experience? Let us know so we can help."></textarea>
+            </div>
+
+            <div class="field">
+              <button type="submit" class="btn btn-primary">Send enquiry</button>
+              <p class="form-footnote">
+                By submitting this form you agree to be contacted about driving lessons. Your details are kept private and never shared.
+              </p>
+            </div>
+          </form>
+
+          <aside class="contact-info-card">
+            <div>
+              <div class="contact-label">Direct contact</div>
+              <div class="contact-line">
+                <span class="contact-value">
+                  Call / WhatsApp:<br />
+                  <a href="tel:+440000000000">0000 000 000</a>
+                </span>
+                <span class="contact-value">
+                  Email:<br />
+                  <a href="mailto:info@nofearlearners.co.uk">info@nofearlearners.co.uk</a>
+                </span>
+              </div>
+            </div>
+
+            <div>
+              <div class="contact-label">Areas covered</div>
+              <div class="contact-taglist">
+                <span class="tag">YourTown</span>
+                <span class="tag">Suburb A</span>
+                <span class="tag">Suburb B</span>
+                <span class="tag">College &amp; Uni areas</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="contact-label">Availability</div>
+              <p class="availability-note">
+                Lessons available Monday–Friday, plus limited Saturday slots. We’ll always do our best to match
+                your work, school or college timetable.
+              </p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>© <span id="year"></span> No Fear Learners Driving School. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="#top">Back to top</a>
+        <a href="mailto:info@nofearlearners.co.uk">Email</a>
+        <a href="tel:+440000000000">Call</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+  // Smooth scroll helper
+  function scrollToSection(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    window.scrollTo({
+      top: el.offsetTop - 70,
+      behavior: "smooth",
+    });
+  }
+
+  // Nav toggle on mobile
+  const navToggle = document.getElementById("navToggle");
+  const navbar = document.getElementById("navbar");
+
+  navToggle.addEventListener("click", () => {
+    navbar.classList.toggle("nav-menu-open");
+  });
+
+  // Smooth scroll for in-page links
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", (e) => {
+      const targetId = link.getAttribute("href").substring(1);
+      if (!targetId) return;
+      const target = document.getElementById(targetId);
+      if (target) {
+        e.preventDefault();
+        navbar.classList.remove("nav-menu-open");
+        window.scrollTo({
+          top: target.offsetTop - 70,
+          behavior: "smooth",
+        });
+      }
+    });
+  });
+
+  // Simple front-end form "submit" handler
+  const form = document.getElementById("contactForm");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    alert("Thank you for your enquiry! No Fear Learners Driving School will be in touch as soon as possible to confirm your lesson.");
+    form.reset();
+  });
+
+  // Current year in footer
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
